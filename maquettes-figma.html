@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stratégies Mobile E-commerce | ConvertNative</title>
+    <meta name="description" content="Découvrez les stratégies concrètes des marques e-commerce qui ont boosté leur CA mobile avec une application native.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-serif: 'Instrument Serif', Georgia, serif;
+            --gray-50: #F9FAFB; --gray-100: #F3F4F6; --gray-200: #E5E7EB;
+            --gray-300: #D1D5DB; --gray-400: #9CA3AF; --gray-500: #6B7280;
+            --gray-600: #4B5563; --gray-700: #374151; --gray-800: #1F2937; --gray-900: #111827;
+            --blue-50: #EFF6FF; --blue-100: #DBEAFE; --blue-200: #BFDBFE;
+            --blue-400: #60A5FA; --blue-500: #3B82F6; --blue-600: #2563EB; --blue-700: #1D4ED8;
+            --green-500: #10B981; --green-600: #059669;
+            --red-500: #EF4444;
+            --white: #FFFFFF;
+        }
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: var(--font-sans); background: var(--gray-50); color: var(--gray-700); line-height: 1.6; }
+        
+        /* Header */
+        .header { background: var(--white); padding: 1rem 2rem; border-bottom: 1px solid var(--gray-200); }
+        .header-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
+        .logo { display: flex; align-items: center; gap: 0.625rem; font-weight: 700; font-size: 1rem; color: var(--gray-900); text-decoration: none; }
+        .logo img { height: 24px; width: auto; }
+        .header-badge { display: inline-flex; align-items: center; gap: 0.375rem; background: var(--green-500); color: var(--white); font-size: 0.75rem; font-weight: 600; padding: 0.375rem 0.75rem; border-radius: 100px; }
+        .header-badge svg { width: 14px; height: 14px; }
+
+        /* Hero Video Section */
+        .hero { padding: 3rem 2rem 4rem; background: var(--white); }
+        .hero-inner { max-width: 900px; margin: 0 auto; }
+        .hero-header { text-align: center; margin-bottom: 2rem; }
+        .hero-badge { display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(16, 185, 129, 0.1); color: var(--green-600); font-size: 0.8125rem; font-weight: 600; padding: 0.5rem 1rem; border-radius: 100px; margin-bottom: 1rem; }
+        .hero-badge svg { width: 16px; height: 16px; }
+        .hero-title { font-family: var(--font-serif); font-size: clamp(1.75rem, 4vw, 2.5rem); font-weight: 500; color: var(--gray-900); line-height: 1.25; margin-bottom: 0.75rem; }
+        .hero-subtitle { font-size: 1.0625rem; color: var(--gray-500); max-width: 600px; margin: 0 auto; }
+        
+        .video-container { position: relative; width: 100%; padding-bottom: 56.25%; background: var(--gray-900); border-radius: 16px; overflow: hidden; box-shadow: 0 24px 48px rgba(0,0,0,0.15); }
+        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+        .video-placeholder { position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; background: linear-gradient(135deg, var(--gray-800), var(--gray-900)); cursor: pointer; }
+        .video-placeholder .play-icon { width: 80px; height: 80px; background: var(--blue-600); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; transition: transform 0.2s; }
+        .video-placeholder:hover .play-icon { transform: scale(1.1); }
+        .video-placeholder .play-icon svg { width: 32px; height: 32px; color: var(--white); margin-left: 4px; }
+        .video-placeholder p { color: var(--gray-400); font-size: 0.875rem; }
+
+        /* Post Video CTA */
+        .post-video-cta { text-align: center; margin-top: 3rem; padding: 2.5rem; background: var(--gray-50); border-radius: 16px; border: 1px solid var(--gray-200); }
+        .post-video-cta h3 { font-family: var(--font-serif); font-size: 1.5rem; color: var(--gray-900); margin-bottom: 0.5rem; }
+        .post-video-cta .cta-urgency { color: var(--gray-600); margin-bottom: 1.5rem; font-size: 1.0625rem; }
+        
+        /* Offer Card */
+        .offer-card { background: var(--white); border: 2px solid var(--blue-200); border-radius: 16px; padding: 1.5rem; margin-bottom: 1.5rem; text-align: left; }
+        .offer-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; }
+        .designer-photo { width: 64px; height: 64px; border-radius: 50%; object-fit: cover; border: 3px solid var(--blue-100); }
+        .offer-header-text { flex: 1; }
+        .offer-badge { display: inline-block; background: linear-gradient(135deg, #FEF3C7, #FDE68A); color: #92400E; font-size: 0.75rem; font-weight: 700; padding: 0.25rem 0.625rem; border-radius: 100px; margin-bottom: 0.375rem; }
+        .offer-header-text h4 { font-size: 1.125rem; font-weight: 700; color: var(--gray-900); margin-bottom: 0.25rem; }
+        .offer-header-text p { font-size: 0.8125rem; color: var(--gray-500); margin: 0; }
+        .offer-value { display: flex; align-items: center; gap: 1rem; padding: 1rem; background: var(--gray-50); border-radius: 12px; margin-bottom: 1rem; justify-content: center; }
+        .price-original { font-size: 1.25rem; color: var(--gray-400); text-decoration: line-through; }
+        .price-free { font-size: 1.5rem; font-weight: 800; color: var(--green-600); background: rgba(16, 185, 129, 0.1); padding: 0.375rem 1rem; border-radius: 8px; }
+        .offer-includes { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+        .offer-includes li { font-size: 0.9375rem; color: var(--gray-700); }
+        
+        /* Timer */
+        .timer-container { margin-bottom: 1.5rem; }
+        .timer-label { font-size: 0.875rem; font-weight: 600; color: var(--red-500); margin-bottom: 0.75rem; }
+        .countdown { display: flex; align-items: center; justify-content: center; gap: 0.5rem; }
+        .countdown-item { display: flex; flex-direction: column; align-items: center; background: var(--gray-900); padding: 0.75rem 1.25rem; border-radius: 12px; min-width: 70px; }
+        .countdown-value { font-size: 2rem; font-weight: 800; color: var(--white); font-variant-numeric: tabular-nums; }
+        .countdown-unit { font-size: 0.6875rem; font-weight: 600; color: var(--gray-400); text-transform: uppercase; letter-spacing: 0.05em; }
+        .countdown-separator { font-size: 2rem; font-weight: 700; color: var(--gray-900); }
+        
+        .cta-button-urgent { background: linear-gradient(135deg, var(--blue-600), var(--blue-700)); box-shadow: 0 8px 24px rgba(37, 99, 235, 0.35); animation: pulse-button 2s infinite; }
+        @keyframes pulse-button { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.02); } }
+        .cta-button { display: inline-flex; align-items: center; gap: 0.5rem; background: var(--blue-600); color: var(--white); font-size: 1rem; font-weight: 600; padding: 1rem 2rem; border-radius: 12px; text-decoration: none; transition: all 0.2s; border: none; cursor: pointer; }
+        .cta-button:hover { background: var(--blue-700); transform: translateY(-2px); }
+        .cta-button svg { width: 20px; height: 20px; }
+        .cta-note { margin-top: 1rem; font-size: 0.8125rem; color: var(--gray-500); }
+        .cta-note svg { width: 14px; height: 14px; display: inline-block; vertical-align: middle; margin-right: 0.25rem; color: var(--green-500); }
+
+        /* Booking Section */
+        .booking { padding: 5rem 2rem; background: var(--blue-600); }
+        .booking-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr; gap: 3rem; align-items: center; }
+        @media (min-width: 900px) { .booking-inner { grid-template-columns: 1fr 1.1fr; } }
+        .booking-content h2 { font-family: var(--font-serif); font-size: clamp(1.75rem, 4vw, 2.25rem); font-weight: 500; color: var(--white); line-height: 1.25; margin-bottom: 1rem; }
+        .booking-content p { font-size: 1.0625rem; color: rgba(255,255,255,0.85); line-height: 1.7; margin-bottom: 1.5rem; }
+        .booking-benefits { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; }
+        .booking-benefits li { display: flex; align-items: center; gap: 0.625rem; font-size: 0.9375rem; color: var(--white); }
+        .booking-benefits li svg { width: 20px; height: 20px; color: #86EFAC; flex-shrink: 0; }
+        .booking-embed { background: var(--white); border-radius: 16px; padding: 0.5rem; box-shadow: 0 16px 48px rgba(0,0,0,0.2); min-height: 620px; }
+
+        /* Section Labels & Titles */
+        .section-label { display: inline-block; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--blue-600); margin-bottom: 0.75rem; }
+        .section-title { font-family: var(--font-serif); font-size: clamp(1.625rem, 4vw, 2.125rem); font-weight: 500; color: var(--gray-900); line-height: 1.25; margin-bottom: 0.625rem; }
+        .section-subtitle { font-size: 1.0625rem; color: var(--gray-500); max-width: 640px; margin: 0 auto 2.5rem; }
+
+        /* Metrics Section */
+        .metrics { padding: 5rem 2rem; background: var(--white); text-align: center; }
+        .metrics-inner { max-width: 1100px; margin: 0 auto; }
+        .metrics-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
+        @media (min-width: 768px) { .metrics-grid { grid-template-columns: repeat(4, 1fr); } }
+        .metric-card { background: var(--gray-50); border: 1px solid var(--gray-200); border-radius: 16px; padding: 1.5rem 1rem; }
+        .metric-value { font-size: clamp(1.75rem, 4vw, 2.25rem); font-weight: 700; color: var(--blue-600); margin-bottom: 0.25rem; }
+        .metric-label { font-size: 0.875rem; font-weight: 600; color: var(--gray-800); margin-bottom: 0.25rem; }
+        .metric-detail { font-size: 0.75rem; color: var(--gray-500); }
+
+        /* Ecosystem Section */
+        .ecosystem { padding: 5rem 2rem; background: var(--gray-900); }
+        .ecosystem-inner { max-width: 1100px; margin: 0 auto; text-align: center; }
+        .ecosystem .section-label { color: var(--blue-400); }
+        .ecosystem-title { font-family: var(--font-serif); font-size: clamp(1.625rem, 4vw, 2.125rem); font-weight: 500; color: var(--white); line-height: 1.25; margin-bottom: 0.625rem; }
+        .ecosystem-subtitle { font-size: 1.0625rem; color: var(--gray-400); max-width: 640px; margin: 0 auto 2.5rem; }
+        .ecosystem-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; margin-bottom: 2rem; }
+        @media (min-width: 768px) { .ecosystem-grid { grid-template-columns: repeat(3, 1fr); } }
+        .ecosystem-item { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 1.5rem; text-align: center; }
+        .ecosystem-visual { height: 180px; background: rgba(255,255,255,0.02); border-radius: 12px; margin-bottom: 1.25rem; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+        .ecosystem-visual img { max-width: 100%; max-height: 100%; object-fit: contain; }
+        .ecosystem-item h3 { font-size: 1.0625rem; font-weight: 600; color: var(--white); margin-bottom: 0.375rem; }
+        .ecosystem-item p { font-size: 0.875rem; color: var(--gray-400); }
+        .ecosystem-features { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem 2rem; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.1); }
+        .ecosystem-feature { display: flex; align-items: center; gap: 0.5rem; font-size: 0.875rem; color: var(--gray-300); }
+        .ecosystem-feature svg { width: 18px; height: 18px; color: var(--green-500); }
+
+        /* Process Section */
+        .process { padding: 5rem 2rem; background: var(--white); }
+        .process-inner { max-width: 900px; margin: 0 auto; text-align: center; }
+        .process .section-subtitle { max-width: 600px; margin: 0 auto 3rem; }
+        .process-steps { display: flex; flex-direction: column; align-items: center; gap: 0; }
+        @media (min-width: 768px) { .process-steps { flex-direction: row; align-items: flex-start; gap: 0; } }
+        .process-step { flex: 1; display: flex; flex-direction: column; align-items: center; text-align: center; padding: 1.5rem; position: relative; }
+        .process-number { width: 56px; height: 56px; border-radius: 50%; background: var(--blue-600); color: var(--white); font-size: 1.5rem; font-weight: 700; display: flex; align-items: center; justify-content: center; margin-bottom: 1.25rem; box-shadow: 0 8px 24px rgba(37, 99, 235, 0.25); }
+        .process-content h3 { font-size: 1.125rem; font-weight: 600; color: var(--gray-900); margin-bottom: 0.625rem; }
+        .process-content p { font-size: 0.9375rem; color: var(--gray-600); line-height: 1.6; max-width: 280px; }
+        .process-connector { display: none; }
+        @media (min-width: 768px) { 
+            .process-connector { display: block; width: 60px; height: 2px; background: linear-gradient(90deg, var(--blue-200), var(--blue-400)); margin-top: 28px; flex-shrink: 0; }
+        }
+
+        /* Differentiator Section */
+        .differentiator { padding: 5rem 2rem; background: var(--gray-900); color: var(--white); }
+        .differentiator-inner { max-width: 1100px; margin: 0 auto; }
+        .differentiator .section-label { color: var(--blue-400); }
+        .differentiator .section-title { color: var(--white); margin-bottom: 1.25rem; }
+        .differentiator-content { max-width: 700px; margin-bottom: 2.5rem; }
+        .differentiator-text { font-size: 1.0625rem; color: var(--gray-300); line-height: 1.8; margin-bottom: 0.875rem; }
+        .differentiator-text strong { color: var(--white); font-weight: 600; }
+        .differentiator-compare { display: grid; grid-template-columns: 1fr; gap: 1.25rem; }
+        @media (min-width: 768px) { .differentiator-compare { grid-template-columns: 1fr 1fr; } }
+        .compare-card { padding: 1.75rem; border-radius: 16px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); }
+        .compare-card h4 { font-size: 1rem; font-weight: 600; margin-bottom: 1.25rem; padding-bottom: 0.875rem; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .compare-card ul { list-style: none; display: flex; flex-direction: column; gap: 0.875rem; }
+        .compare-card li { display: flex; align-items: flex-start; gap: 0.625rem; font-size: 0.9375rem; line-height: 1.5; color: var(--gray-300); }
+        .compare-card li svg { flex-shrink: 0; width: 18px; height: 18px; margin-top: 2px; }
+        .compare-not { background: rgba(239, 68, 68, 0.08); border-color: rgba(239, 68, 68, 0.2); }
+        .compare-not h4 { color: #FCA5A5; }
+        .compare-not li svg { color: var(--red-500); }
+        .compare-is { background: rgba(16, 185, 129, 0.08); border-color: rgba(16, 185, 129, 0.2); }
+        .compare-is h4 { color: #6EE7B7; }
+        .compare-is li svg { color: var(--green-500); }
+        .compare-is li { color: var(--gray-200); }
+
+        /* Integrations */
+        .integrations { padding: 3rem 2rem; background: var(--gray-100); text-align: center; }
+        .integrations-inner { max-width: 900px; margin: 0 auto; }
+        .integrations-title { font-size: 0.875rem; color: var(--gray-500); margin-bottom: 1.5rem; }
+        .integrations-logos { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 2rem; }
+        .integrations-logos img { height: 80px; width: auto; opacity: 0.7; filter: grayscale(100%); transition: all 0.2s; }
+        .integrations-logos img:hover { opacity: 1; filter: grayscale(0%); }
+
+        /* Final CTA */
+        .final-cta { padding: 5rem 2rem; background: var(--white); text-align: center; border-top: 1px solid var(--gray-200); }
+        .final-cta-inner { max-width: 700px; margin: 0 auto; }
+        .final-cta h2 { font-family: var(--font-serif); font-size: clamp(1.625rem, 4vw, 2rem); font-weight: 500; color: var(--gray-900); margin-bottom: 0.75rem; }
+        .final-cta p { font-size: 1.0625rem; color: var(--gray-600); margin-bottom: 2rem; }
+
+        /* Footer */
+        .footer { background: var(--gray-900); padding: 2.5rem 2rem; text-align: center; }
+        .footer-inner { max-width: 1200px; margin: 0 auto; }
+        .footer-logo { display: flex; align-items: center; justify-content: center; gap: 0.625rem; font-weight: 700; font-size: 1rem; color: var(--white); margin-bottom: 0.75rem; }
+        .footer-logo img { height: 22px; width: auto; filter: brightness(0) invert(1); }
+        .footer-text { font-size: 0.8125rem; color: var(--gray-500); }
+        .footer-links { margin-top: 1.25rem; display: flex; justify-content: center; gap: 1.5rem; }
+        .footer-links a { font-size: 0.8125rem; color: var(--gray-400); text-decoration: none; transition: color 0.2s; }
+        .footer-links a:hover { color: var(--white); }
+        .footer-legal { margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: center; align-items: center; gap: 0.75rem; }
+        .footer-legal a { font-size: 0.75rem; color: var(--gray-500); text-decoration: none; transition: color 0.2s; }
+        .footer-legal a:hover { color: var(--gray-300); }
+        .footer-legal span { color: var(--gray-600); font-size: 0.75rem; }
+        .footer-copyright { margin-top: 1rem; font-size: 0.6875rem; color: var(--gray-600); }
+
+        /* Animations */
+        .fade-in { opacity: 0; transform: translateY(24px); transition: all 0.5s ease-out; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-inner">
+            <a href="index.html" class="logo">
+                <img src="CN_LOGO.png" alt="ConvertNative">
+                <span>ConvertNative</span>
+            </a>
+            <div class="header-badge">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                Accès débloqué
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO VIDEO SECTION -->
+    <section class="hero">
+        <div class="hero-inner">
+            <div class="hero-header">
+                <div class="hero-badge">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                    Vidéo débloquée
+                </div>
+                <h1 class="hero-title">Comment ces marques ont fait exploser leur CA mobile</h1>
+                <p class="hero-subtitle">Maxime Augiat, CEO & fondateur de ConvertNative, décortique les stratégies mobile-first des plus grandes marques e-commerce — et vous montre comment les répliquer.</p>
+            </div>
+            
+            <div class="video-container">
+                <!-- Remplacer par votre embed vidéo (Vimeo, YouTube, Wistia...) -->
+                <!-- <iframe src="https://player.vimeo.com/video/VOTRE_VIDEO_ID?title=0&byline=0&portrait=0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe> -->
+                
+                <!-- Placeholder - à remplacer par l'embed -->
+                <div class="video-placeholder" id="videoPlaceholder">
+                    <div class="play-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                    </div>
+                    <p>Remplacez ce placeholder par votre embed vidéo</p>
+                </div>
+            </div>
+
+            <!-- POST VIDEO CTA -->
+            <div class="post-video-cta">
+                <h3>Vous êtes e-commerçant et vous voulez faire exploser votre business en basculant mobile-first ?</h3>
+                <p class="cta-urgency">Complétez le formulaire ci-dessous pour bénéficier de notre offre exclusive :</p>
+                
+                <div class="offer-card">
+                    <div class="offer-header">
+                        <img src="remi_noir_blanc.png" alt="Rémi - Lead Designer" class="designer-photo">
+                        <div class="offer-header-text">
+                            <span class="offer-badge">🎁 Offre limitée</span>
+                            <h4>Maquettes Figma sur-mesure</h4>
+                            <p>Réalisées par Rémi, notre Lead Designer Mobile avec +50 apps e-commerce à son actif</p>
+                        </div>
+                    </div>
+                    <div class="offer-value">
+                        <span class="price-original">Valeur : 8 000 €</span>
+                        <span class="price-free">OFFERT</span>
+                    </div>
+                    <ul class="offer-includes">
+                        <li>✓ Maquettes iOS & Android personnalisées à votre marque</li>
+                        <li>✓ Écrans clés : Home, Fiche produit, Panier, Checkout</li>
+                        <li>✓ Aperçu des notifications push</li>
+                        <li>✓ Call de présentation avec notre équipe</li>
+                    </ul>
+                </div>
+
+                <div class="timer-container">
+                    <p class="timer-label">⏱️ Cette offre expire dans :</p>
+                    <div class="countdown" id="countdown">
+                        <div class="countdown-item">
+                            <span class="countdown-value" id="minutes">05</span>
+                            <span class="countdown-unit">min</span>
+                        </div>
+                        <div class="countdown-separator">:</div>
+                        <div class="countdown-item">
+                            <span class="countdown-value" id="seconds">00</span>
+                            <span class="countdown-unit">sec</span>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="#booking" class="cta-button cta-button-urgent" onclick="document.querySelector('.booking').scrollIntoView({behavior: 'smooth'}); return false;">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+                    Réserver mes maquettes gratuites maintenant
+                </a>
+                <p class="cta-note">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                    Livré en 48h · Sans engagement · Places limitées
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- BOOKING SECTION -->
+    <section class="booking" id="booking">
+        <div class="booking-inner">
+            <div class="booking-content">
+                <h2>Réservez vos maquettes Figma offertes</h2>
+                <p>Nos meilleurs designers mobile créent vos maquettes sur-mesure en 48h. Une valeur de 8 000€, <strong>100% offerte</strong> pour les e-commerçants sérieux.</p>
+                <ul class="booking-benefits">
+                    <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                        Maquettes iOS & Android personnalisées à votre marque
+                    </li>
+                    <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                        Livré en 48h — valeur 8 000€ offerte
+                    </li>
+                    <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                        Call de présentation avec notre équipe
+                    </li>
+                    <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                        Sans engagement — aucune obligation
+                    </li>
+                </ul>
+            </div>
+            <div class="booking-embed">
+                <!-- iClosed inline widget begin -->
+                <div class="iclosed-widget" data-url="https://app.iclosed.io/e/maximeaugiat/auditmobileapp" title="Validez votre offre exclusive " style="width: 100%; height: 620px"></div>
+                <script type="text/javascript" src="https://app.iclosed.io/assets/widget.js" async></script>
+                <!-- iClosed inline widget end -->
+            </div>
+        </div>
+    </section>
+
+    <!-- METRICS SECTION -->
+    <section class="metrics">
+        <div class="metrics-inner">
+            <span class="section-label">Les chiffres clés</span>
+            <h2 class="section-title">L'impact mesurable d'une app native</h2>
+            <p class="section-subtitle">Des données issues de Criteo, AppsFlyer et Forrester sur les performances app vs web mobile.</p>
+            <div class="metrics-grid">
+                <div class="metric-card fade-in">
+                    <div class="metric-value">x2.8</div>
+                    <div class="metric-label">LTV client</div>
+                    <div class="metric-detail">$85 in-app vs $30 responsive</div>
+                </div>
+                <div class="metric-card fade-in">
+                    <div class="metric-value">-20%</div>
+                    <div class="metric-label">Coût de réactivation</div>
+                    <div class="metric-detail">Push gratuit vs retargeting payant</div>
+                </div>
+                <div class="metric-card fade-in">
+                    <div class="metric-value">x10</div>
+                    <div class="metric-label">Temps passé</div>
+                    <div class="metric-detail">Rétention de cohortes supérieure</div>
+                </div>
+                <div class="metric-card fade-in">
+                    <div class="metric-value">7x</div>
+                    <div class="metric-label">Taux d'ouverture</div>
+                    <div class="metric-detail">Push vs email marketing</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ECOSYSTEM SECTION -->
+    <section class="ecosystem">
+        <div class="ecosystem-inner">
+            <span class="section-label">La solution</span>
+            <h2 class="ecosystem-title">Un écosystème 360° à votre service</h2>
+            <p class="ecosystem-subtitle">Tout ce dont vous avez besoin pour réussir</p>
+            
+            <div class="ecosystem-grid">
+                <div class="ecosystem-item fade-in">
+                    <div class="ecosystem-visual">
+                        <img src="mockup-apps.png" alt="App Mobile Avancée">
+                    </div>
+                    <h3>App Mobile Avancée</h3>
+                    <p>iOS + Android natives</p>
+                </div>
+                <div class="ecosystem-item fade-in">
+                    <div class="ecosystem-visual">
+                        <img src="mockup-notif.png" alt="Notifications Ciblées">
+                    </div>
+                    <h3>Notifications Ciblées</h3>
+                    <p>7x plus efficaces qu'un email</p>
+                </div>
+                <div class="ecosystem-item fade-in">
+                    <div class="ecosystem-visual">
+                        <img src="mockup-dashboard.png" alt="Dashboard Analytics">
+                    </div>
+                    <h3>Dashboard Analytics</h3>
+                    <p>Vue 360° de votre business mobile</p>
+                </div>
+            </div>
+            
+            <div class="ecosystem-features">
+                <div class="ecosystem-feature">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                    <span>Mises à jour auto</span>
+                </div>
+                <div class="ecosystem-feature">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                    <span>Analytics cross-platform</span>
+                </div>
+                <div class="ecosystem-feature">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                    <span>Segmentation avancée</span>
+                </div>
+                <div class="ecosystem-feature">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                    <span>Support dédié</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROCESS SECTION -->
+    <section class="process">
+        <div class="process-inner">
+            <span class="section-label">Comment ça marche</span>
+            <h2 class="section-title">3 étapes pour lancer votre app</h2>
+            <p class="section-subtitle">Un process simple, sans friction, pensé pour les équipes e-commerce.</p>
+            
+            <div class="process-steps">
+                <div class="process-step fade-in">
+                    <div class="process-number">1</div>
+                    <div class="process-content">
+                        <h3>Demandez vos maquettes</h3>
+                        <p>On crée gratuitement le design de votre future app, adapté à votre marque.</p>
+                    </div>
+                </div>
+                <div class="process-connector"></div>
+                <div class="process-step fade-in">
+                    <div class="process-number">2</div>
+                    <div class="process-content">
+                        <h3>Validez le design</h3>
+                        <p>Un call de présentation pour affiner ensemble et répondre à vos questions.</p>
+                    </div>
+                </div>
+                <div class="process-connector"></div>
+                <div class="process-step fade-in">
+                    <div class="process-number">3</div>
+                    <div class="process-content">
+                        <h3>Lancez en 4-6 semaines</h3>
+                        <p>Votre app iOS + Android en production. On gère tout, vous récoltez les résultats.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DIFFERENTIATOR SECTION -->
+    <section class="differentiator">
+        <div class="differentiator-inner">
+            <div class="differentiator-content">
+                <span class="section-label">Notre différence</span>
+                <h2 class="section-title">On ne vous vend pas du rêve.<br>On l'a vécu.</h2>
+                <p class="differentiator-text">
+                    Avant de créer ConvertNative, nous étions e-commerçants. Nous avons fait passer notre marque de <strong>0 à 15M€ de CA en 3 ans</strong>, en misant tout sur le mobile-first.
+                </p>
+                <p class="differentiator-text">
+                    On sait ce que c'est de voir 70% de son trafic partir sur mobile sans pouvoir le réactiver. On a cherché des solutions. On n'en a pas trouvé. Alors on l'a construite.
+                </p>
+            </div>
+            <div class="differentiator-compare fade-in">
+                <div class="compare-card compare-not">
+                    <h4>Ce que nous ne sommes PAS</h4>
+                    <ul>
+                        <li><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>Une agence qui livre et disparaît</li>
+                        <li><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>Un outil self-service sans support</li>
+                        <li><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>Des consultants qui n'ont jamais vendu en ligne</li>
+                    </ul>
+                </div>
+                <div class="compare-card compare-is">
+                    <h4>Ce que nous SOMMES</h4>
+                    <ul>
+                        <li><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>Ex e-commerçants (0 → 15M€ en 3 ans)</li>
+                        <li><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>Un partenaire 360° : app, stratégie, optimisation continue</li>
+                        <li><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>Votre équipe mobile dédiée par abonnement</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INTEGRATIONS -->
+    <section class="integrations">
+        <div class="integrations-inner">
+            <p class="integrations-title">Compatible avec votre stack e-commerce</p>
+            <div class="integrations-logos">
+                <img src="Design_sans_titre__28_.png" alt="Shopify">
+                <img src="Design_sans_titre__27_.png" alt="PrestaShop">
+                <img src="Design_sans_titre__26_.png" alt="WooCommerce">
+                <img src="Design_sans_titre__29_.png" alt="Magento">
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="final-cta">
+        <div class="final-cta-inner">
+            <h2>Ne laissez pas vos concurrents prendre de l'avance</h2>
+            <p>Chaque jour sans app mobile, c'est du chiffre d'affaires qui vous échappe. Réservez vos maquettes gratuites maintenant.</p>
+            <a href="#booking" class="cta-button" onclick="document.querySelector('.booking').scrollIntoView({behavior: 'smooth'}); return false;">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+                Réserver mes maquettes (valeur 8 000€)
+            </a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-logo">
+                <img src="CN_LOGO.png" alt="ConvertNative">
+                <span>ConvertNative</span>
+            </div>
+            <p class="footer-text">L'écosystème mobile-first pour les marques e-commerce ambitieuses.</p>
+            <div class="footer-links">
+                <a href="https://convertnative.com">Site web</a>
+                <!-- <a href="https://convertnative.com/cas-clients">Cas clients</a> -->
+                <a href="mailto:contact@convertnative.com">Contact</a>
+            </div>
+            <div class="footer-legal">
+                <a href="mentions-legales.html">Mentions légales</a>
+                <span>·</span>
+                <a href="cgv.html">CGV</a>
+            </div>
+            <p class="footer-copyright">© 2025 ConvertNative. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Fade-in animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // Countdown Timer - 5 minutes
+        function startCountdown() {
+            let timeLeft = 5 * 60; // 5 minutes en secondes
+            
+            const minutesEl = document.getElementById('minutes');
+            const secondsEl = document.getElementById('seconds');
+            
+            function updateDisplay() {
+                const mins = Math.floor(timeLeft / 60);
+                const secs = timeLeft % 60;
+                minutesEl.textContent = String(mins).padStart(2, '0');
+                secondsEl.textContent = String(secs).padStart(2, '0');
+            }
+            
+            updateDisplay();
+            
+            const interval = setInterval(() => {
+                timeLeft--;
+                updateDisplay();
+                
+                if (timeLeft <= 0) {
+                    clearInterval(interval);
+                    // Optionnel: action quand le timer expire
+                    document.querySelector('.countdown').innerHTML = '<p style="color: #EF4444; font-weight: 600;">⚠️ Offre expirée — Rechargez la page</p>';
+                }
+            }, 1000);
+        }
+        
+        // Démarrer le countdown
+        startCountdown();
+    </script>
+</body>
+</html>
