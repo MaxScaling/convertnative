@@ -26,6 +26,7 @@
         
         /* Header */
         .header { background: var(--white); padding: 1rem 2rem; border-bottom: 1px solid var(--gray-200); }
+        @media (max-width: 480px) { .header { padding: 0.75rem 1rem; } }
         .header-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
         .logo { display: flex; align-items: center; gap: 0.625rem; font-weight: 700; font-size: 1rem; color: var(--gray-900); text-decoration: none; }
         .logo img { height: 24px; width: auto; }
@@ -44,6 +45,7 @@
         .hero-subtitle { font-size: 1.0625rem; color: var(--gray-500); max-width: 600px; margin: 0 auto; }
         
         .video-container { position: relative; width: 100%; padding-bottom: 56.25%; background: var(--gray-900); border-radius: 16px; overflow: hidden; box-shadow: 0 24px 48px rgba(0,0,0,0.15); }
+        @media (max-width: 480px) { .video-container { padding-bottom: 50%; border-radius: 12px; box-shadow: 0 12px 24px rgba(0,0,0,0.1); } }
         .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
         .video-placeholder { position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; background: linear-gradient(135deg, var(--gray-800), var(--gray-900)); cursor: pointer; }
         .video-placeholder .play-icon { width: 80px; height: 80px; background: var(--blue-600); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; transition: transform 0.2s; }
@@ -129,6 +131,34 @@
         /* Hero badge fade out */
         .hero-badge { transition: opacity 0.5s ease-out; }
         .hero-badge.fade-out { opacity: 0; }
+
+        /* Animation elevate pour le titre offre */
+        @keyframes elevate {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+        .booking-header h2 { animation: elevate 2s ease-in-out infinite; }
+
+        /* Responsive mobile - iPhone 14 */
+        @media (max-width: 480px) {
+            .hero { padding: 1rem 1rem 1.5rem; }
+            .hero-header { margin-bottom: 1rem; }
+            .hero-title { font-size: 1.25rem; margin-bottom: 0.5rem; }
+            .hero-subtitle { font-size: 0.875rem; }
+            .booking { padding: 2rem 1rem; }
+            .booking-header h2 { font-size: 1.25rem; }
+            .offer-card-blue { padding: 1rem; }
+            .offer-card-blue .designer-photo { width: 48px; height: 48px; }
+            .offer-card-blue .offer-header-text h4 { font-size: 1rem; }
+            .offer-card-blue .offer-header-text p { font-size: 0.75rem; }
+            .offer-value-blue { padding: 0.75rem; gap: 0.5rem; }
+            .price-original-blue { font-size: 1rem; }
+            .price-free-blue { font-size: 1.25rem; }
+            .offer-includes-blue li { font-size: 0.8125rem; }
+            .countdown-item-blue { padding: 0.5rem 0.75rem; min-width: 55px; }
+            .countdown-value-blue { font-size: 1.5rem; }
+            .booking-instruction { font-size: 1rem; }
+        }
 
         /* Section Labels & Titles */
         .section-label { display: inline-block; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--blue-600); margin-bottom: 0.75rem; }
