@@ -47,9 +47,9 @@
         .header-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
         .logo { display: flex; align-items: center; gap: 0.75rem; font-weight: 700; font-size: 1.25rem; color: var(--gray-900); text-decoration: none; }
         .logo img { height: 28px; width: auto; }
-        .header-cta { display: none; padding: 0.625rem 1.25rem; background: var(--blue-600); color: var(--white); border-radius: 8px; font-weight: 600; font-size: 0.875rem; text-decoration: none; transition: all 0.2s; }
+        .header-cta { display: block; padding: 0.625rem 1.25rem; background: var(--blue-600); color: var(--white); border-radius: 8px; font-weight: 600; font-size: 0.875rem; text-decoration: none; transition: all 0.2s; }
         .header-cta:hover { background: var(--blue-700); transform: translateY(-1px); }
-        @media (min-width: 640px) { .header-cta { display: block; } }
+        @media (max-width: 400px) { .header-cta { padding: 0.5rem 0.75rem; font-size: 0.75rem; } }
 
         .hero { padding: 7rem 2rem 4rem; background: linear-gradient(180deg, var(--blue-50) 0%, var(--white) 100%); min-height: 100vh; display: flex; align-items: center; }
         .hero-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr; gap: 3rem; align-items: center; }
@@ -714,14 +714,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
         document.getElementById('email-form-hero').addEventListener('submit', function(e) {
             e.preventDefault();
-            document.getElementById('hero-form').classList.add('hidden');
-            document.getElementById('success-hero').classList.add('show');
+            const email = this.querySelector('input[type="email"]').value;
+            // Stocker l'email si besoin (localStorage ou envoyer à un backend)
+            localStorage.setItem('userEmail', email);
+            window.location.href = 'maquettes-figma.html';
         });
 
         document.getElementById('email-form-final').addEventListener('submit', function(e) {
             e.preventDefault();
-            document.getElementById('final-form-container').classList.add('hidden');
-            document.getElementById('success-final').classList.add('show');
+            const email = this.querySelector('input[type="email"]').value;
+            localStorage.setItem('userEmail', email);
+            window.location.href = 'maquettes-figma.html';
         });
 
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
