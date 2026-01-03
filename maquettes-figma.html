@@ -31,6 +31,8 @@
         .logo img { height: 24px; width: auto; }
         .header-badge { display: inline-flex; align-items: center; gap: 0.375rem; background: var(--green-500); color: var(--white); font-size: 0.75rem; font-weight: 600; padding: 0.375rem 0.75rem; border-radius: 100px; }
         .header-badge svg { width: 14px; height: 14px; }
+        .header-cta { display: block; padding: 0.625rem 1.25rem; background: var(--blue-600); color: var(--white); border-radius: 8px; font-weight: 600; font-size: 0.875rem; text-decoration: none; transition: all 0.2s; }
+        .header-cta:hover { background: var(--blue-700); transform: translateY(-1px); }
 
         /* Hero Video Section */
         .hero { padding: 3rem 2rem 4rem; background: var(--white); }
@@ -86,15 +88,47 @@
         .cta-note svg { width: 14px; height: 14px; display: inline-block; vertical-align: middle; margin-right: 0.25rem; color: var(--green-500); }
 
         /* Booking Section */
-        .booking { padding: 5rem 2rem; background: var(--blue-600); }
+        .booking { padding: 4rem 2rem; background: var(--blue-600); }
         .booking-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr; gap: 3rem; align-items: center; }
         @media (min-width: 900px) { .booking-inner { grid-template-columns: 1fr 1.1fr; } }
+        .booking-inner-full { max-width: 800px; margin: 0 auto; text-align: center; }
+        .booking-header { margin-bottom: 2rem; }
+        .booking-header h2 { font-family: var(--font-serif); font-size: clamp(1.5rem, 4vw, 2rem); font-weight: 500; color: var(--white); line-height: 1.25; margin-bottom: 1.5rem; }
+        .booking-instruction { font-size: 1.125rem; font-weight: 600; color: var(--white); margin-top: 1.5rem; }
         .booking-content h2 { font-family: var(--font-serif); font-size: clamp(1.75rem, 4vw, 2.25rem); font-weight: 500; color: var(--white); line-height: 1.25; margin-bottom: 1rem; }
         .booking-content p { font-size: 1.0625rem; color: rgba(255,255,255,0.85); line-height: 1.7; margin-bottom: 1.5rem; }
         .booking-benefits { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; }
         .booking-benefits li { display: flex; align-items: center; gap: 0.625rem; font-size: 0.9375rem; color: var(--white); }
         .booking-benefits li svg { width: 20px; height: 20px; color: #86EFAC; flex-shrink: 0; }
         .booking-embed { background: var(--white); border-radius: 16px; padding: 0.5rem; box-shadow: 0 16px 48px rgba(0,0,0,0.2); min-height: 620px; }
+        .booking-embed-full { background: var(--white); border-radius: 16px; padding: 0.5rem; box-shadow: 0 16px 48px rgba(0,0,0,0.2); min-height: 620px; max-width: 600px; margin: 0 auto; }
+
+        /* Offer Card Blue */
+        .offer-card-blue { background: rgba(255,255,255,0.1); border: 2px solid rgba(255,255,255,0.2); border-radius: 16px; padding: 1.5rem; margin-bottom: 1.5rem; text-align: left; }
+        .offer-card-blue .offer-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; }
+        .offer-card-blue .designer-photo { width: 64px; height: 64px; border-radius: 50%; object-fit: cover; border: 3px solid rgba(255,255,255,0.3); }
+        .offer-card-blue .offer-header-text { flex: 1; }
+        .offer-badge-gold { display: inline-block; background: linear-gradient(135deg, #FEF3C7, #FDE68A); color: #92400E; font-size: 0.75rem; font-weight: 700; padding: 0.25rem 0.625rem; border-radius: 100px; margin-bottom: 0.375rem; }
+        .offer-card-blue .offer-header-text h4 { font-size: 1.125rem; font-weight: 700; color: var(--white); margin-bottom: 0.25rem; }
+        .offer-card-blue .offer-header-text p { font-size: 0.8125rem; color: rgba(255,255,255,0.7); margin: 0; }
+        .offer-value-blue { display: flex; align-items: center; gap: 1rem; padding: 1rem; background: rgba(255,255,255,0.1); border-radius: 12px; margin-bottom: 1rem; justify-content: center; }
+        .price-original-blue { font-size: 1.25rem; color: rgba(255,255,255,0.5); text-decoration: line-through; }
+        .price-free-blue { font-size: 1.5rem; font-weight: 800; color: #86EFAC; background: rgba(16, 185, 129, 0.2); padding: 0.375rem 1rem; border-radius: 8px; }
+        .offer-includes-blue { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+        .offer-includes-blue li { font-size: 0.9375rem; color: rgba(255,255,255,0.9); }
+
+        /* Timer Blue */
+        .timer-container-blue { margin-bottom: 1rem; }
+        .timer-label-blue { font-size: 0.875rem; font-weight: 600; color: #FCA5A5; margin-bottom: 0.75rem; }
+        .countdown-blue { display: flex; align-items: center; justify-content: center; gap: 0.5rem; }
+        .countdown-item-blue { display: flex; flex-direction: column; align-items: center; background: var(--white); padding: 0.75rem 1.25rem; border-radius: 12px; min-width: 70px; }
+        .countdown-value-blue { font-size: 2rem; font-weight: 800; color: var(--gray-900); font-variant-numeric: tabular-nums; }
+        .countdown-unit-blue { font-size: 0.6875rem; font-weight: 600; color: var(--gray-500); text-transform: uppercase; letter-spacing: 0.05em; }
+        .countdown-separator-blue { font-size: 2rem; font-weight: 700; color: var(--white); }
+
+        /* Hero badge fade out */
+        .hero-badge { transition: opacity 0.5s ease-out; }
+        .hero-badge.fade-out { opacity: 0; }
 
         /* Section Labels & Titles */
         .section-label { display: inline-block; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--blue-600); margin-bottom: 0.75rem; }
@@ -207,10 +241,7 @@
                 <img src="CN_LOGO.png" alt="ConvertNative">
                 <span>ConvertNative</span>
             </a>
-            <div class="header-badge">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-                Accès débloqué
-            </div>
+            <a href="#iclosed-form" class="header-cta" onclick="document.getElementById('iclosed-form').scrollIntoView({behavior: 'smooth', block: 'center'}); return false;">Réserver un appel</a>
         </div>
     </header>
 
@@ -218,7 +249,7 @@
     <section class="hero">
         <div class="hero-inner">
             <div class="hero-header">
-                <div class="hero-badge">
+                <div class="hero-badge" id="heroBadge">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
                     Vidéo débloquée
                 </div>
@@ -238,26 +269,29 @@
                     <p>Remplacez ce placeholder par votre embed vidéo</p>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <!-- POST VIDEO CTA -->
-            <div class="post-video-cta">
-                <h3>Vous êtes e-commerçant et vous voulez faire exploser votre business en basculant mobile-first ?</h3>
-                <p class="cta-urgency">Complétez le formulaire ci-dessous pour bénéficier de notre offre exclusive :</p>
+    <!-- BOOKING SECTION - Offre exclusive -->
+    <section class="booking" id="booking">
+        <div class="booking-inner-full">
+            <div class="booking-header">
+                <h2>🎁 Vous venez de débloquer une offre exclusive à durée limitée !</h2>
                 
-                <div class="offer-card">
+                <div class="offer-card-blue">
                     <div class="offer-header">
                         <img src="remi_noir_blanc.png" alt="Rémi - Lead Designer" class="designer-photo">
                         <div class="offer-header-text">
-                            <span class="offer-badge">🎁 Offre limitée</span>
-                            <h4>Maquettes Figma sur-mesure</h4>
+                            <span class="offer-badge-gold">🎁 Offre limitée</span>
+                            <h4>Vos maquettes Figma sur-mesure</h4>
                             <p>Réalisées par Rémi, notre Lead Designer Mobile avec +50 apps e-commerce à son actif</p>
                         </div>
                     </div>
-                    <div class="offer-value">
-                        <span class="price-original">Valeur : 8 000 €</span>
-                        <span class="price-free">OFFERT</span>
+                    <div class="offer-value-blue">
+                        <span class="price-original-blue">Valeur : 8 000 €</span>
+                        <span class="price-free-blue">OFFERT</span>
                     </div>
-                    <ul class="offer-includes">
+                    <ul class="offer-includes-blue">
                         <li>✓ Maquettes iOS & Android personnalisées à votre marque</li>
                         <li>✓ Écrans clés : Home, Fiche produit, Panier, Checkout</li>
                         <li>✓ Aperçu des notifications push</li>
@@ -265,59 +299,25 @@
                     </ul>
                 </div>
 
-                <div class="timer-container">
-                    <p class="timer-label">⏱️ Cette offre expire dans :</p>
-                    <div class="countdown" id="countdown">
-                        <div class="countdown-item">
-                            <span class="countdown-value" id="minutes">05</span>
-                            <span class="countdown-unit">min</span>
+                <div class="timer-container-blue">
+                    <p class="timer-label-blue">⏱️ Cette offre expire dans :</p>
+                    <div class="countdown-blue" id="countdown">
+                        <div class="countdown-item-blue">
+                            <span class="countdown-value-blue" id="minutes">05</span>
+                            <span class="countdown-unit-blue">min</span>
                         </div>
-                        <div class="countdown-separator">:</div>
-                        <div class="countdown-item">
-                            <span class="countdown-value" id="seconds">00</span>
-                            <span class="countdown-unit">sec</span>
+                        <div class="countdown-separator-blue">:</div>
+                        <div class="countdown-item-blue">
+                            <span class="countdown-value-blue" id="seconds">00</span>
+                            <span class="countdown-unit-blue">sec</span>
                         </div>
                     </div>
                 </div>
 
-                <a href="#booking" class="cta-button cta-button-urgent" onclick="document.querySelector('.booking').scrollIntoView({behavior: 'smooth'}); return false;">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
-                    Réserver mes maquettes gratuites maintenant
-                </a>
-                <p class="cta-note">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-                    Livré en 48h · Sans engagement · Places limitées
-                </p>
+                <p class="booking-instruction">👇 Complétez le formulaire ci-dessous pour réserver vos maquettes gratuites</p>
             </div>
-        </div>
-    </section>
-
-    <!-- BOOKING SECTION -->
-    <section class="booking" id="booking">
-        <div class="booking-inner">
-            <div class="booking-content">
-                <h2>Réservez vos maquettes Figma offertes</h2>
-                <p>Nos meilleurs designers mobile créent vos maquettes sur-mesure en 48h. Une valeur de 8 000€, <strong>100% offerte</strong> pour les e-commerçants sérieux.</p>
-                <ul class="booking-benefits">
-                    <li>
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-                        Maquettes iOS & Android personnalisées à votre marque
-                    </li>
-                    <li>
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-                        Livré en 48h — valeur 8 000€ offerte
-                    </li>
-                    <li>
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-                        Call de présentation avec notre équipe
-                    </li>
-                    <li>
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-                        Sans engagement — aucune obligation
-                    </li>
-                </ul>
-            </div>
-            <div class="booking-embed">
+            
+            <div class="booking-embed-full" id="iclosed-form">
                 <!-- iClosed inline widget begin -->
                 <div class="iclosed-widget" data-url="https://app.iclosed.io/e/maximeaugiat/auditmobileapp" title="Validez votre offre exclusive " style="width: 100%; height: 620px"></div>
                 <script type="text/javascript" src="https://app.iclosed.io/assets/widget.js" async></script>
@@ -496,7 +496,7 @@
         <div class="final-cta-inner">
             <h2>Ne laissez pas vos concurrents prendre de l'avance</h2>
             <p>Chaque jour sans app mobile, c'est du chiffre d'affaires qui vous échappe. Réservez vos maquettes gratuites maintenant.</p>
-            <a href="#booking" class="cta-button" onclick="document.querySelector('.booking').scrollIntoView({behavior: 'smooth'}); return false;">
+            <a href="#iclosed-form" class="cta-button" onclick="document.getElementById('iclosed-form').scrollIntoView({behavior: 'smooth', block: 'center'}); return false;">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
                 Réserver mes maquettes (valeur 8 000€)
             </a>
@@ -531,6 +531,15 @@
         }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
         document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
+        // Faire disparaître le badge "Vidéo débloquée" après 2s
+        setTimeout(() => {
+            const heroBadge = document.getElementById('heroBadge');
+            if (heroBadge) {
+                heroBadge.classList.add('fade-out');
+                setTimeout(() => { heroBadge.style.display = 'none'; }, 500);
+            }
+        }, 2000);
+
         // Countdown Timer - 5 minutes
         function startCountdown() {
             let timeLeft = 5 * 60; // 5 minutes en secondes
@@ -553,8 +562,7 @@
                 
                 if (timeLeft <= 0) {
                     clearInterval(interval);
-                    // Optionnel: action quand le timer expire
-                    document.querySelector('.countdown').innerHTML = '<p style="color: #EF4444; font-weight: 600;">⚠️ Offre expirée — Rechargez la page</p>';
+                    document.querySelector('.countdown-blue').innerHTML = '<p style="color: #FCA5A5; font-weight: 600;">⚠️ Offre expirée — Rechargez la page</p>';
                 }
             }, 1000);
         }
