@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-5KJTSWH8');</script>
+    <!-- End Google Tag Manager -->
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ConvertNative - Comment les grandes marques e-commerce explosent leurs ventes en mobile-first</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Newsreader:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --blue-600: #2563EB;
+            --blue-700: #1D4ED8;
+            --blue-400: #60A5FA;
+            --blue-50: #EFF6FF;
+            --blue-100: #DBEAFE;
+            --gray-50: #F9FAFB;
+            --gray-100: #F3F4F6;
+            --gray-200: #E5E7EB;
+            --gray-300: #D1D5DB;
+            --gray-400: #9CA3AF;
+            --gray-500: #6B7280;
+            --gray-600: #4B5563;
+            --gray-700: #374151;
+            --gray-800: #1F2937;
+            --gray-900: #111827;
+            --white: #FFFFFF;
+            --red-500: #EF4444;
+            --green-500: #10B981;
+            --font-sans: 'Instrument Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-serif: 'Newsreader', Georgia, serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: var(--font-sans); color: var(--gray-800); line-height: 1.6; background: var(--white); overflow-x: hidden; }
+
+        .header { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 1rem 2rem; background: rgba(255,255,255,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid var(--gray-100); }
+        .header-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+        .logo { display: flex; align-items: center; gap: 0.75rem; font-weight: 700; font-size: 1.25rem; color: var(--gray-900); text-decoration: none; }
+        .logo img { height: 28px; width: auto; }
+        .header-cta { display: block; padding: 0.625rem 1.25rem; background: var(--blue-600); color: var(--white); border-radius: 8px; font-weight: 600; font-size: 0.875rem; text-decoration: none; transition: all 0.2s; }
+        .header-cta:hover { background: var(--blue-700); transform: translateY(-1px); }
+        @media (max-width: 400px) { .header-cta { padding: 0.5rem 0.75rem; font-size: 0.75rem; } }
+
+        .hero { padding: 7rem 2rem 4rem; background: linear-gradient(180deg, var(--blue-50) 0%, var(--white) 100%); min-height: 100vh; display: flex; align-items: center; }
+        .hero-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr; gap: 3rem; align-items: center; }
+        @media (min-width: 1024px) { .hero-inner { grid-template-columns: 1.1fr 0.9fr; gap: 4rem; } }
+        .hero-content { max-width: 600px; }
+        .hero-badge { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1rem; background: var(--white); border: 1px solid var(--gray-200); border-radius: 100px; font-size: 0.875rem; color: var(--gray-600); margin-bottom: 1.5rem; animation: fadeInUp 0.6s ease-out; }
+        .hero-badge-dot { width: 8px; height: 8px; background: var(--green-500); border-radius: 50%; animation: pulse 2s infinite; }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+        .hero-title { font-family: var(--font-serif); font-size: clamp(1.875rem, 4.5vw, 2.75rem); font-weight: 500; line-height: 1.2; color: var(--gray-900); margin-bottom: 1.25rem; animation: fadeInUp 0.6s ease-out 0.1s backwards; }
+        .hero-title em { font-style: italic; color: var(--blue-600); }
+        .hero-subtitle { font-size: 1.0625rem; color: var(--gray-600); margin-bottom: 1.5rem; line-height: 1.7; animation: fadeInUp 0.6s ease-out 0.2s backwards; }
+        .hero-brands { display: flex; align-items: center; gap: 1.5rem; margin-bottom: 2rem; flex-wrap: wrap; animation: fadeInUp 0.6s ease-out 0.25s backwards; }
+        .hero-brands-label { font-size: 0.8125rem; color: var(--gray-500); white-space: nowrap; }
+        .hero-brands-logos { display: flex; align-items: center; gap: 1.25rem; flex-wrap: wrap; }
+        .hero-brands-logos img { height: 20px; width: auto; opacity: 0.8; }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .hero-form { animation: fadeInUp 0.6s ease-out 0.3s backwards; }
+        .form-group { display: flex; flex-direction: column; gap: 0.75rem; }
+        @media (min-width: 480px) { .form-group { flex-direction: row; } }
+        .form-stack { display: flex; flex-direction: column; gap: 0.75rem; max-width: 400px; }
+        .form-input { flex: 1; padding: 1rem 1.25rem; font-size: 1rem; font-family: var(--font-sans); border: 2px solid var(--gray-200); border-radius: 12px; background: var(--white); transition: all 0.2s; }
+        .form-input:focus { outline: none; border-color: var(--blue-600); box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1); }
+        .form-input::placeholder { color: var(--gray-400); }
+        .form-button { padding: 1rem 1.75rem; font-size: 1rem; font-weight: 600; font-family: var(--font-sans); background: var(--blue-600); color: var(--white); border: none; border-radius: 12px; cursor: pointer; transition: all 0.2s; white-space: nowrap; }
+        .form-button:hover { background: var(--blue-700); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(37, 99, 235, 0.3); }
+        .form-privacy { margin-top: 0.75rem; font-size: 0.8125rem; color: var(--gray-500); display: flex; align-items: center; gap: 0.375rem; }
+        .form-privacy svg { width: 14px; height: 14px; color: var(--green-500); }
+        .hero-visual { position: relative; animation: fadeInUp 0.6s ease-out 0.4s backwards; }
+        .hero-visual img { width: 100%; max-width: 480px; height: auto; border-radius: 16px; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15); }
+        .video-preview-block { background: var(--white); border-radius: 16px; padding: 1.25rem; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.15); max-width: 420px; }
+        .video-preview-label { display: flex; align-items: center; gap: 0.5rem; font-size: 0.8125rem; font-weight: 600; color: var(--blue-600); margin-bottom: 1rem; }
+        .video-thumbnail { position: relative; border-radius: 12px; overflow: hidden; cursor: pointer; }
+        .video-thumbnail img { width: 100%; height: auto; display: block; }
+        .video-thumbnail .play-button { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 64px; height: 64px; background: var(--blue-600); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 24px rgba(37,99,235,0.4); transition: transform 0.2s; }
+        .video-thumbnail:hover .play-button { transform: translate(-50%, -50%) scale(1.1); }
+        .video-thumbnail .play-button svg { width: 28px; height: 28px; color: var(--white); margin-left: 3px; }
+        .video-preview-text { margin-top: 1rem; font-size: 0.875rem; color: var(--gray-600); text-align: center; line-height: 1.5; }
+
+        .problem { padding: 5rem 2rem; background: var(--gray-900); color: var(--white); }
+        .problem-inner { max-width: 1000px; margin: 0 auto; }
+        .section-label { display: inline-block; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--blue-400); margin-bottom: 1rem; }
+        .section-title { font-family: var(--font-serif); font-size: clamp(1.75rem, 4vw, 2.25rem); font-weight: 500; color: var(--white); margin-bottom: 1rem; max-width: 700px; }
+        .section-subtitle { font-size: 1.125rem; color: var(--gray-400); margin-bottom: 3rem; max-width: 600px; }
+        .problem-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
+        @media (min-width: 768px) { .problem-grid { grid-template-columns: repeat(2, 1fr); } }
+        .problem-card { padding: 1.75rem; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; transition: all 0.3s; }
+        .problem-card:hover { background: rgba(255,255,255,0.06); border-color: rgba(239, 68, 68, 0.3); }
+        .problem-card-icon { width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; background: rgba(239, 68, 68, 0.15); border-radius: 10px; margin-bottom: 1rem; }
+        .problem-card-icon svg { width: 20px; height: 20px; color: var(--red-500); }
+        .problem-card h3 { font-size: 1.0625rem; font-weight: 600; color: var(--white); margin-bottom: 0.5rem; }
+        .problem-card p { font-size: 0.9375rem; color: var(--gray-400); line-height: 1.6; }
+        .problem-card strong { color: var(--red-500); font-weight: 600; }
+        .problem-highlight { margin-top: 3rem; padding: 2rem; background: linear-gradient(135deg, rgba(37, 99, 235, 0.15) 0%, rgba(37, 99, 235, 0.05) 100%); border: 1px solid rgba(37, 99, 235, 0.3); border-radius: 16px; text-align: center; }
+        .problem-highlight p { font-size: 1.25rem; color: var(--white); font-weight: 500; }
+        .problem-highlight strong { color: var(--blue-400); }
+
+        .metrics { padding: 5rem 2rem; background: var(--white); }
+        .metrics-inner { max-width: 1100px; margin: 0 auto; }
+        .metrics .section-label { color: var(--blue-600); }
+        .metrics .section-title { color: var(--gray-900); margin-bottom: 3rem; }
+        .metrics-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+        @media (min-width: 768px) { .metrics-grid { grid-template-columns: repeat(4, 1fr); } }
+        .metric-card { padding: 1.5rem; background: var(--gray-50); border-radius: 16px; text-align: center; transition: all 0.3s; }
+        .metric-card:hover { background: var(--blue-50); transform: translateY(-4px); }
+        .metric-value { font-size: 2.25rem; font-weight: 700; color: var(--blue-600); margin-bottom: 0.25rem; }
+        .metric-label { font-size: 0.875rem; font-weight: 500; color: var(--gray-700); margin-bottom: 0.5rem; }
+        .metric-detail { font-size: 0.75rem; color: var(--gray-500); line-height: 1.4; }
+
+        .ecosystem { padding: 5rem 2rem; background: var(--gray-900); }
+        .ecosystem-inner { max-width: 1200px; margin: 0 auto; text-align: center; }
+        .ecosystem .section-label { color: var(--blue-400); }
+        .ecosystem-title { font-family: var(--font-serif); font-size: clamp(1.75rem, 4vw, 2.5rem); font-weight: 500; color: var(--white); margin-bottom: 0.5rem; }
+        .ecosystem-subtitle { font-size: 1.125rem; color: var(--gray-400); margin-bottom: 3.5rem; }
+        .ecosystem-grid { display: grid; grid-template-columns: 1fr; gap: 2.5rem; margin-bottom: 3rem; }
+        @media (min-width: 768px) { .ecosystem-grid { grid-template-columns: repeat(3, 1fr); } }
+        .ecosystem-item { text-align: center; }
+        .ecosystem-visual { height: 280px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; }
+        .ecosystem-visual img { max-width: 100%; max-height: 100%; object-fit: contain; border-radius: 12px; }
+        .ecosystem-item h3 { font-size: 1.25rem; font-weight: 600; color: var(--blue-400); margin-bottom: 0.5rem; }
+        .ecosystem-item p { font-size: 0.9375rem; color: var(--gray-400); }
+        .ecosystem-features { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem 2rem; padding: 1.5rem 2rem; background: rgba(255,255,255,0.03); border-radius: 12px; border: 1px solid rgba(255,255,255,0.08); }
+        .ecosystem-feature { display: flex; align-items: center; gap: 0.5rem; font-size: 0.9375rem; color: var(--gray-300); }
+        .ecosystem-feature svg { width: 18px; height: 18px; color: var(--green-500); }
+
+        .reveals { padding: 5rem 2rem; background: var(--gray-50); }
+        .reveals-inner { max-width: 900px; margin: 0 auto; }
+        .reveals .section-label { color: var(--blue-600); }
+        .reveals .section-title { color: var(--gray-900); margin-bottom: 3rem; }
+        .reveal-list { display: flex; flex-direction: column; gap: 1.5rem; }
+        .reveal-item { display: flex; gap: 1.25rem; align-items: flex-start; padding: 1.75rem; background: var(--white); border-radius: 16px; border: 1px solid var(--gray-200); transition: all 0.3s; }
+        .reveal-item:hover { border-color: var(--blue-200); box-shadow: 0 8px 24px rgba(37, 99, 235, 0.08); transform: translateX(4px); }
+        .reveal-number { flex-shrink: 0; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; background: var(--blue-600); color: var(--white); font-weight: 700; font-size: 1.125rem; border-radius: 12px; }
+        .reveal-content h3 { font-size: 1.0625rem; font-weight: 600; color: var(--gray-900); margin-bottom: 0.375rem; }
+        .reveal-content p { font-size: 0.9375rem; color: var(--gray-600); line-height: 1.6; }
+
+        .for-who { padding: 5rem 2rem; background: var(--white); }
+        .for-who-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr; gap: 3rem; align-items: center; }
+        @media (min-width: 1024px) { .for-who-inner { grid-template-columns: 1fr 1fr; } }
+        .for-who-visual img { width: 100%; max-width: 500px; border-radius: 16px; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1); }
+        .for-who-content { max-width: 500px; }
+        .for-who .section-label { color: var(--blue-600); }
+        .for-who .section-title { color: var(--gray-900); }
+        .checklist { display: flex; flex-direction: column; gap: 1rem; margin-top: 1.5rem; }
+        .checklist-item { display: flex; gap: 0.875rem; align-items: flex-start; }
+        .checklist-icon { flex-shrink: 0; width: 22px; height: 22px; background: var(--green-500); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-top: 2px; }
+        .checklist-icon svg { width: 12px; height: 12px; color: var(--white); }
+        .checklist-text { font-size: 1rem; color: var(--gray-700); line-height: 1.5; }
+        .checklist-text strong { color: var(--gray-900); }
+
+        .blockers { padding: 5rem 2rem; background: var(--gray-50); }
+        .blockers-inner { max-width: 1000px; margin: 0 auto; }
+        .blockers .section-label { color: var(--blue-600); }
+        .blockers .section-title { color: var(--gray-900); margin-bottom: 0.5rem; }
+        .blockers .section-subtitle { color: var(--gray-600); margin-bottom: 2.5rem; }
+        .blockers-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
+        @media (min-width: 768px) { .blockers-grid { grid-template-columns: repeat(3, 1fr); } }
+        .blocker-card { padding: 1.75rem; background: var(--white); border-radius: 16px; border: 1px solid var(--gray-200); transition: all 0.3s; }
+        .blocker-card:hover { border-color: var(--blue-200); box-shadow: 0 8px 24px rgba(37, 99, 235, 0.08); transform: translateY(-4px); }
+        .blocker-icon { font-size: 2rem; margin-bottom: 1rem; }
+        .blocker-card h3 { font-size: 1rem; font-weight: 600; color: var(--gray-900); margin-bottom: 0.5rem; }
+        .blocker-card p { font-size: 0.9375rem; color: var(--gray-600); line-height: 1.6; }
+        .blocker-card em { color: var(--blue-600); font-style: normal; font-weight: 600; }
+
+        .differentiator { padding: 5rem 2rem; background: var(--gray-900); color: var(--white); }
+        .differentiator-inner { max-width: 1100px; margin: 0 auto; }
+        .differentiator .section-label { color: var(--blue-400); }
+        .differentiator .section-title { color: var(--white); margin-bottom: 1.25rem; }
+        .differentiator-content { max-width: 700px; margin-bottom: 2.5rem; }
+        .differentiator-text { font-size: 1.0625rem; color: var(--gray-300); line-height: 1.8; margin-bottom: 0.875rem; }
+        .differentiator-text strong { color: var(--white); font-weight: 600; }
+        .differentiator-compare { display: grid; grid-template-columns: 1fr; gap: 1.25rem; }
+        @media (min-width: 768px) { .differentiator-compare { grid-template-columns: 1fr 1fr; } }
+        .compare-card { padding: 1.75rem; border-radius: 16px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); }
+        .compare-card h4 { font-size: 1rem; font-weight: 600; margin-bottom: 1.25rem; padding-bottom: 0.875rem; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .compare-card ul { list-style: none; display: flex; flex-direction: column; gap: 0.875rem; }
+        .compare-card li { display: flex; align-items: flex-start; gap: 0.625rem; font-size: 0.9375rem; line-height: 1.5; color: var(--gray-300); }
+        .compare-card li svg { flex-shrink: 0; width: 18px; height: 18px; margin-top: 2px; }
+        .compare-not { background: rgba(239, 68, 68, 0.08); border-color: rgba(239, 68, 68, 0.2); }
+        .compare-not h4 { color: #FCA5A5; }
+        .compare-not li svg { color: var(--red-500); }
+        .compare-is { background: rgba(16, 185, 129, 0.08); border-color: rgba(16, 185, 129, 0.2); }
+        .compare-is h4 { color: #6EE7B7; }
+        .compare-is li svg { color: var(--green-500); }
+        .compare-is li { color: var(--gray-200); }
+
+        .process { padding: 5rem 2rem; background: var(--white); }
+        .process-inner { max-width: 900px; margin: 0 auto; text-align: center; }
+        .process .section-subtitle { max-width: 600px; margin: 0 auto 3rem; }
+        .process-steps { display: flex; flex-direction: column; align-items: center; gap: 0; }
+        @media (min-width: 768px) { .process-steps { flex-direction: row; align-items: flex-start; gap: 0; } }
+        .process-step { flex: 1; display: flex; flex-direction: column; align-items: center; text-align: center; padding: 1.5rem; position: relative; }
+        .process-number { width: 56px; height: 56px; border-radius: 50%; background: var(--blue-600); color: var(--white); font-size: 1.5rem; font-weight: 700; display: flex; align-items: center; justify-content: center; margin-bottom: 1.25rem; box-shadow: 0 8px 24px rgba(37, 99, 235, 0.25); }
+        .process-content h3 { font-size: 1.125rem; font-weight: 600; color: var(--gray-900); margin-bottom: 0.625rem; }
+        .process-content p { font-size: 0.9375rem; color: var(--gray-600); line-height: 1.6; max-width: 280px; }
+        .process-connector { display: none; }
+        @media (min-width: 768px) { 
+            .process-connector { display: block; width: 60px; height: 2px; background: linear-gradient(90deg, var(--blue-200), var(--blue-400)); margin-top: 28px; flex-shrink: 0; }
+        }
+
+        .presenter { padding: 5rem 2rem; background: var(--gray-50); }
+        .presenter-inner { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; text-align: center; }
+        @media (min-width: 768px) { .presenter-inner { flex-direction: row; text-align: left; gap: 2.5rem; } }
+        .presenter-image { flex-shrink: 0; width: 160px; height: 160px; border-radius: 50%; overflow: hidden; margin-bottom: 1.5rem; box-shadow: 0 16px 32px rgba(0, 0, 0, 0.12); border: 4px solid var(--white); }
+        @media (min-width: 768px) { .presenter-image { margin-bottom: 0; } }
+        .presenter-image img { width: 100%; height: 100%; object-fit: cover; }
+        .presenter-info h3 { font-size: 0.8125rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--blue-600); margin-bottom: 0.5rem; }
+        .presenter-info h2 { font-family: var(--font-serif); font-size: 1.5rem; font-weight: 500; color: var(--gray-900); margin-bottom: 0.75rem; }
+        .presenter-info p { font-size: 1rem; color: var(--gray-600); line-height: 1.7; }
+        .presenter-info strong { color: var(--gray-900); }
+
+        .integrations { padding: 3rem 2rem; background: var(--white); border-top: 1px solid var(--gray-100); }
+        .integrations-inner { max-width: 900px; margin: 0 auto; text-align: center; }
+        .integrations-title { font-size: 0.875rem; color: var(--gray-500); margin-bottom: 1.5rem; }
+        .integrations-logos { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 2rem; }
+        .integrations-logos img { height: 80px; width: auto; opacity: 0.7; transition: opacity 0.2s; filter: grayscale(100%); }
+        .integrations-logos img:hover { opacity: 1; filter: grayscale(0%); }
+
+        .booking { padding: 5rem 2rem; background: var(--gray-50); }
+        .booking-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr; gap: 3rem; align-items: start; }
+        @media (min-width: 900px) { .booking-inner { grid-template-columns: 1fr 1.2fr; } }
+        .booking-content { }
+        .booking .section-label { color: var(--blue-600); }
+        .booking .section-title { color: var(--gray-900); margin-bottom: 1rem; }
+        .booking-text { font-size: 1.0625rem; color: var(--gray-600); line-height: 1.7; margin-bottom: 1.5rem; }
+        .booking-benefits { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; }
+        .booking-benefits li { display: flex; align-items: center; gap: 0.625rem; font-size: 0.9375rem; color: var(--gray-700); }
+        .booking-benefits li svg { width: 20px; height: 20px; color: var(--green-500); flex-shrink: 0; }
+        .booking-embed { background: var(--white); border-radius: 16px; box-shadow: 0 4px 24px rgba(0,0,0,0.08); overflow: hidden; min-height: 500px; }
+        .iclosed-placeholder iframe { display: block; }
+
+        .final-cta { padding: 5rem 2rem; background: var(--blue-600); text-align: center; }
+        .final-cta-inner { max-width: 580px; margin: 0 auto; }
+        .final-cta h2 { font-family: var(--font-serif); font-size: clamp(1.625rem, 4vw, 2rem); font-weight: 500; color: var(--white); margin-bottom: 0.75rem; }
+        .final-cta p { font-size: 1.0625rem; color: rgba(255,255,255,0.8); margin-bottom: 2rem; }
+        .final-cta .form-group { max-width: 460px; margin: 0 auto; }
+        .final-cta .form-stack { max-width: 400px; margin: 0 auto; }
+        .final-cta .form-input { border-color: transparent; }
+        .final-cta .form-button { background: var(--gray-900); }
+        .final-cta .form-button:hover { background: var(--gray-800); }
+        .final-cta .form-privacy { color: rgba(255,255,255,0.6); justify-content: center; }
+        .final-cta .form-privacy svg { color: rgba(255,255,255,0.8); }
+
+        .footer { padding: 2.5rem 2rem; background: var(--gray-900); text-align: center; }
+        .footer-inner { max-width: 1200px; margin: 0 auto; }
+        .footer-logo { display: flex; align-items: center; justify-content: center; gap: 0.625rem; font-weight: 700; font-size: 1rem; color: var(--white); margin-bottom: 0.75rem; }
+        .footer-logo img { height: 22px; width: auto; filter: brightness(0) invert(1); }
+        .footer-text { font-size: 0.8125rem; color: var(--gray-500); }
+        .footer-links { margin-top: 1.25rem; display: flex; justify-content: center; gap: 1.5rem; }
+        .footer-links a { font-size: 0.8125rem; color: var(--gray-400); text-decoration: none; transition: color 0.2s; }
+        .footer-links a:hover { color: var(--white); }
+        .footer-legal { margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: center; align-items: center; gap: 0.75rem; }
+        .footer-legal a { font-size: 0.75rem; color: var(--gray-500); text-decoration: none; transition: color 0.2s; }
+        .footer-legal a:hover { color: var(--gray-300); }
+        .footer-legal span { color: var(--gray-600); font-size: 0.75rem; }
+        .footer-copyright { margin-top: 1rem; font-size: 0.6875rem; color: var(--gray-600); }
+
+        .fade-in { opacity: 1; transform: translateY(0); transition: all 0.5s ease-out; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+        .form-success { display: none; padding: 1.25rem; background: #ECFDF5; border: 1px solid #A7F3D0; border-radius: 12px; text-align: center; }
+        .form-success.show { display: block; }
+        .form-success h4 { font-size: 1rem; font-weight: 600; color: #065F46; margin-bottom: 0.375rem; }
+        .form-success p { font-size: 0.875rem; color: #047857; }
+        .hero-form.hidden, .final-form-container.hidden { display: none; }
+    </style>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5KJTSWH8"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+    <header class="header">
+        <div class="header-inner">
+            <a href="#" class="logo">
+                <img src="CN_LOGO.png" alt="ConvertNative">
+                <span>ConvertNative</span>
+            </a>
+            <a href="#rdv" class="header-cta">Prendre un RDV</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-inner">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="hero-badge-dot"></span>
+                    <span>Vidéo gratuite • 12 minutes</span>
+                </div>
+                <h1 class="hero-title">
+                    Comment ces marques ont fait <em>+34% de panier moyen en 24 mois</em> en passant mobile-first
+                </h1>
+                <p class="hero-subtitle">
+                    Découvrez dans cette vidéo exclusive les stratégies concrètes qu'elles ont déployées pour transformer leur trafic mobile en revenus récurrents.
+                </p>
+                <div class="hero-brands">
+                    <span class="hero-brands-label">Étude de cas :</span>
+                    <div class="hero-brands-logos">
+                        <img src="sezane-logo.png" alt="Sézane">
+                        <img src="asos-logo.png" alt="ASOS">
+                        <img src="lbo-logo.png" alt="La Boutique Officielle">
+                    </div>
+                </div>
+                <div class="hero-form" id="hero-form">
+                    <form class="form-stack" id="email-form-hero">
+                        <input type="text" class="form-input" id="firstname-hero" placeholder="Votre prénom" required>
+                        <input type="email" class="form-input" id="email-hero" placeholder="Votre email professionnel" required>
+                        <input type="tel" class="form-input" id="phone-hero" placeholder="Votre téléphone (06...)" required>
+                        <button type="submit" class="form-button">Débloquer la vidéo</button>
+                    </form>
+                    <p class="form-privacy">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" /></svg>
+                        100% gratuit · Sans spam · Accès immédiat
+                    </p>
+                </div>
+                <div class="form-success" id="success-hero">
+                    <h4>✅ Vidéo débloquée !</h4>
+                    <p>Vérifiez votre boîte mail (et vos spams).</p>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="video-preview-block">
+                    <div class="video-preview-label">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="16" height="16"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>
+                        <span>Vidéo exclusive · 12 min</span>
+                    </div>
+                    <div class="video-thumbnail">
+                        <img src="mockup-dashboard.png" alt="Aperçu de la vidéo">
+                        <div class="play-button">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                        </div>
+                    </div>
+                    <p class="video-preview-text"><strong>Je te montre tout en détail.</strong><br>Complète le formulaire pour débloquer la vidéo.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="problem">
+        <div class="problem-inner">
+            <span class="section-label">Le problème</span>
+            <h2 class="section-title">Votre site responsive vous fait perdre des clients chaque jour</h2>
+            <p class="section-subtitle">70% de votre trafic est sur mobile. Pour la majorité de vos clients, la version responsive EST votre marque. Une expérience dégradée = une perception dégradée.</p>
+            
+            <div class="problem-grid">
+                <div class="problem-card fade-in">
+                    <div class="problem-card-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" /></svg>
+                    </div>
+                    <h3>Login à ressaisir à chaque visite</h3>
+                    <p>Vos clients doivent se reconnecter à chaque session. <strong>69% abandonnent</strong> face à cette friction. Mot de passe oublié = client perdu.</p>
+                </div>
+                <div class="problem-card fade-in">
+                    <div class="problem-card-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
+                    </div>
+                    <h3>Aucun moyen de réactiver vos prospects efficacement</h3>
+                    <p>Vous comptez sur vos emails ou votre retargeting pour réactiver vos prospects. Entre la délivrabilité et le taux d'ouverture, <strong>vous avez moins de 5% de chances</strong> de les toucher une deuxième fois.</p>
+                </div>
+                <div class="problem-card fade-in">
+                    <div class="problem-card-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 17h8m0 0V9m0 8l-8-8-4 4-6-6" /></svg>
+                    </div>
+                    <h3>Taux de conversion 3x plus bas</h3>
+                    <p><strong>1.8% sur mobile responsive vs 5.4% sur app native.</strong> Chaque visiteur non converti = budget acquisition gaspillé.</p>
+                </div>
+                <div class="problem-card fade-in">
+                    <div class="problem-card-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                    </div>
+                    <h3>Vous payez pour ré-acquérir vos propres clients</h3>
+                    <p>Un client qui revient via votre app = <strong>0€ de coût pub.</strong> Pas de clic sur une annonce Google, pas de retargeting Facebook. Une notification push ciblée coûte quasi rien vs des centaines d'euros en ads pour le même résultat.</p>
+                </div>
+            </div>
+
+            <div class="problem-highlight fade-in">
+                <p>Acquérir un nouveau client coûte <strong>5x plus cher</strong> que de fidéliser un client existant.<br>Chaque jour sans stratégie mobile-first, vous laissez du CA sur la table.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="metrics">
+        <div class="metrics-inner">
+            <span class="section-label">L'impact mesuré</span>
+            <h2 class="section-title" style="color: var(--gray-900);">Ce que le mobile-first change concrètement</h2>
+            
+            <div class="metrics-grid">
+                <div class="metric-card fade-in">
+                    <div class="metric-value">x2.8</div>
+                    <div class="metric-label">LTV client</div>
+                    <div class="metric-detail">$85 in-app vs $30 sur site responsive</div>
+                </div>
+                <div class="metric-card fade-in">
+                    <div class="metric-value">-20%</div>
+                    <div class="metric-label">Coût de réactivation</div>
+                    <div class="metric-detail">Vos clients reviennent via l'app. Push gratuit vs retargeting payant.</div>
+                </div>
+                <div class="metric-card fade-in">
+                    <div class="metric-value">x10</div>
+                    <div class="metric-label">Temps passé</div>
+                    <div class="metric-detail">Rétention de cohortes supérieure</div>
+                </div>
+                <div class="metric-card fade-in">
+                    <div class="metric-value">7x</div>
+                    <div class="metric-label">Taux d'ouverture</div>
+                    <div class="metric-detail">Push vs email marketing</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="ecosystem">
+        <div class="ecosystem-inner">
+            <span class="section-label">La solution</span>
+            <h2 class="ecosystem-title">Un écosystème 360° à votre service</h2>
+            <p class="ecosystem-subtitle">Tout ce dont vous avez besoin pour réussir</p>
+            
+            <div class="ecosystem-grid">
+                <div class="ecosystem-item fade-in">
+                    <div class="ecosystem-visual">
+                        <img src="mockup-apps.png" alt="App Mobile Avancée">
+                    </div>
+                    <h3>App Mobile Avancée</h3>
+                    <p>iOS + Android natives</p>
+                </div>
+                <div class="ecosystem-item fade-in">
+                    <div class="ecosystem-visual">
+                        <img src="mockup-notif.png" alt="Notifications Ciblées">
+                    </div>
+                    <h3>Notifications Ciblées</h3>
+                    <p>7x plus efficaces qu'un email</p>
+                </div>
+                <div class="ecosystem-item fade-in">
+                    <div class="ecosystem-visual">
+                        <img src="mockup-dashboard.png" alt="Dashboard Analytics">
+                    </div>
+                    <h3>Dashboard Analytics</h3>
+                    <p>Vue 360° de votre business mobile</p>
+                </div>
+            </div>
+            
+            <div class="ecosystem-features">
+                <div class="ecosystem-feature">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                    <span>Mises à jour auto</span>
+                </div>
+                <div class="ecosystem-feature">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                    <span>Analytics cross-platform</span>
+                </div>
+                <div class="ecosystem-feature">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                    <span>Segmentation avancée</span>
+                </div>
+                <div class="ecosystem-feature">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                    <span>Support dédié</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="reveals">
+        <div class="reveals-inner">
+            <span class="section-label">Dans cette vidéo</span>
+            <h2 class="section-title" style="color: var(--gray-900);">Ce que vous allez découvrir</h2>
+            <div class="reveal-list">
+                <div class="reveal-item fade-in">
+                    <div class="reveal-number">1</div>
+                    <div class="reveal-content">
+                        <h3>Pourquoi vos emails marketing ne convertissent plus</h3>
+                        <p>Et comment les notifications push ciblées permettent d'activer vos clients au bon moment avec le bon message.</p>
+                    </div>
+                </div>
+                <div class="reveal-item fade-in">
+                    <div class="reveal-number">2</div>
+                    <div class="reveal-content">
+                        <h3>Comment encapsuler vos clients pour réduire le churn</h3>
+                        <p>Chaque téléchargement = un client récurrent acquis. Login automatique, paiement one-click, zéro friction. Le temps entre l'envie et la commande passe de minutes à secondes.</p>
+                    </div>
+                </div>
+                <div class="reveal-item fade-in">
+                    <div class="reveal-number">3</div>
+                    <div class="reveal-content">
+                        <h3>La méthode pour doubler la fréquence d'achat</h3>
+                        <p>Cas concrets de marques qui ont boosté leur LTV en misant sur leurs clients existants plutôt que sur l'acquisition.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="for-who">
+        <div class="for-who-inner">
+            <div class="for-who-visual fade-in">
+                <img src="Design_sans_titre__25_.png" alt="Dashboard ConvertNative">
+            </div>
+            <div class="for-who-content">
+                <span class="section-label">Pour qui ?</span>
+                <h2 class="section-title" style="color: var(--gray-900);">Cette vidéo est faite pour vous si...</h2>
+                <div class="checklist">
+                    <div class="checklist-item fade-in">
+                        <div class="checklist-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" /></svg></div>
+                        <span class="checklist-text">Vous faites <strong>+500K€/an</strong> en e-commerce</span>
+                    </div>
+                    <div class="checklist-item fade-in">
+                        <div class="checklist-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" /></svg></div>
+                        <span class="checklist-text">Plus de <strong>50% de votre trafic</strong> vient du mobile</span>
+                    </div>
+                    <div class="checklist-item fade-in">
+                        <div class="checklist-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" /></svg></div>
+                        <span class="checklist-text">Vous voulez <strong>augmenter la LTV</strong> de vos clients actuels</span>
+                    </div>
+                    <div class="checklist-item fade-in">
+                        <div class="checklist-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" /></svg></div>
+                        <span class="checklist-text">Vous en avez marre de <strong>payer pour réacquérir</strong> vos propres clients</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="blockers">
+        <div class="blockers-inner">
+            <span class="section-label">Les freins classiques</span>
+            <h2 class="section-title">Pourquoi vous n'avez pas encore d'app mobile</h2>
+            <p class="section-subtitle">On connaît ces objections par cœur. On les avait nous-mêmes.</p>
+            
+            <div class="blockers-grid">
+                <div class="blocker-card fade-in">
+                    <div class="blocker-icon">🎯</div>
+                    <h3>"Le mobile n'est pas notre priorité"</h3>
+                    <p>Alors que 70% de votre trafic y est. Le mobile <em>devrait</em> être votre priorité n°1.</p>
+                </div>
+                <div class="blocker-card fade-in">
+                    <div class="blocker-icon">💰</div>
+                    <h3>"C'est trop cher et trop long"</h3>
+                    <p>Vous surestimez le coût et sous-estimez l'impact. Une app rentabilisée en quelques mois, pas en années.</p>
+                </div>
+                <div class="blocker-card fade-in">
+                    <div class="blocker-icon">🤷</div>
+                    <h3>"On n'a pas les ressources en interne"</h3>
+                    <p>C'est pour ça qu'on existe. Abonnement + approche lean = votre équipe mobile externalisée.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="differentiator">
+        <div class="differentiator-inner">
+            <div class="differentiator-content">
+                <span class="section-label">Notre différence</span>
+                <h2 class="section-title">On ne vous vend pas du rêve.<br>On l'a vécu.</h2>
+                <p class="differentiator-text">
+                    Avant de créer ConvertNative, nous étions e-commerçants. Nous avons fait passer notre marque de <strong>0 à 15M€ de CA en 3 ans</strong>, en misant tout sur le mobile-first.
+                </p>
+                <p class="differentiator-text">
+                    On sait ce que c'est de voir 70% de son trafic partir sur mobile sans pouvoir le réactiver. On a cherché des solutions. On n'en a pas trouvé. Alors on l'a construite.
+                </p>
+            </div>
+            <div class="differentiator-compare fade-in">
+                <div class="compare-card compare-not">
+                    <h4>Ce que nous ne sommes PAS</h4>
+                    <ul>
+                        <li><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>Une agence qui livre et disparaît</li>
+                        <li><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>Un outil self-service sans support</li>
+                        <li><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>Des consultants qui n'ont jamais vendu en ligne</li>
+                    </ul>
+                </div>
+                <div class="compare-card compare-is">
+                    <h4>Ce que nous SOMMES</h4>
+                    <ul>
+                        <li><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>Ex e-commerçants (0 → 15M€ en 3 ans)</li>
+                        <li><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>Un partenaire 360° : app, stratégie, optimisation continue</li>
+                        <li><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>Votre équipe mobile dédiée par abonnement</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="process">
+        <div class="process-inner">
+            <span class="section-label">Comment ça marche</span>
+            <h2 class="section-title">3 étapes pour lancer votre app</h2>
+            <p class="section-subtitle">Un process simple, sans friction, pensé pour les équipes e-commerce.</p>
+            
+            <div class="process-steps">
+                <div class="process-step fade-in">
+                    <div class="process-number">1</div>
+                    <div class="process-content">
+                        <h3>Regardez la vidéo</h3>
+                        <p>Pourquoi les marques qui gagnent ont basculé en mobile-first — et comment elles l'ont fait.</p>
+                    </div>
+                </div>
+                <div class="process-connector"></div>
+                <div class="process-step fade-in">
+                    <div class="process-number">2</div>
+                    <div class="process-content">
+                        <h3>On analyse votre potentiel</h3>
+                        <p>Vos métriques (% mobile, panier moyen), votre UX (frictions, parcours), votre business model. → On vous donne votre ROI estimé avec ConvertNative.</p>
+                    </div>
+                </div>
+                <div class="process-connector"></div>
+                <div class="process-step fade-in">
+                    <div class="process-number">3</div>
+                    <div class="process-content">
+                        <h3>Lancez en 4-6 semaines, sans risque</h3>
+                        <p>App iOS + Android en production. Zéro engagement long terme, zéro risque technique & financier.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="presenter">
+        <div class="presenter-inner fade-in">
+            <div class="presenter-image">
+                <img src="remi_noir_blanc.png" alt="Rémi Caumette">
+            </div>
+            <div class="presenter-info">
+                <h2>Rémi Caumette, Head of Engineering</h2>
+                <p>Rémi et l'équipe ConvertNative accompagnent les marques e-commerce dans leur transition mobile-first. Ils opèrent aujourd'hui <strong>15 applications mobiles</strong> représentant plus de <strong>100 millions d'utilisateurs</strong> en Europe.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="integrations">
+        <div class="integrations-inner">
+            <p class="integrations-title">Compatible avec votre stack e-commerce</p>
+            <div class="integrations-logos">
+                <img src="Design_sans_titre__28_.png" alt="Shopify">
+                <img src="Design_sans_titre__27_.png" alt="PrestaShop">
+                <img src="Design_sans_titre__26_.png" alt="WooCommerce">
+                <img src="Design_sans_titre__29_.png" alt="Magento">
+            </div>
+        </div>
+    </section>
+
+    <section class="booking" id="rdv">
+        <div class="booking-inner">
+            <div class="booking-content">
+                <span class="section-label">Déjà convaincu ?</span>
+                <h2 class="section-title">Vous savez déjà que vous avez besoin d'une app ?</h2>
+                <p class="booking-text">Pas besoin de vidéo. Parlez directement avec un expert pour valider votre projet.</p>
+                <ul class="booking-benefits">
+                    <li><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>Audit express de votre situation e-commerce</li>
+                    <li><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>Estimation du ROI potentiel sur votre base clients</li>
+                    <li><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>15 min · Sans engagement · Places limitées à 5/semaine</li>
+                </ul>
+            </div>
+            <div class="booking-embed">
+                <!-- iClosed inline widget begin -->
+                <div class="iclosed-widget" data-url="https://app.iclosed.io/e/maximeaugiat/validez-votre-appel-avec-un-expert" title="Réserver mon appel stratégique" style="width: 100%; height: 620px"></div>
+                <script type="text/javascript" src="https://app.iclosed.io/assets/widget.js" async></script>
+                <!-- iClosed inline widget end -->
+            </div>
+        </div>
+    </section>
+
+    <section class="final-cta">
+        <div class="final-cta-inner">
+            <h2>Passez en mobile-first avec ConvertNative</h2>
+            <p>Comme Sézane, ASOS et La Boutique Officielle : +34% de panier moyen en 24 mois. Regardez la vidéo pour découvrir comment.</p>
+            <div class="final-form-container" id="final-form-container">
+                <form class="form-stack" id="email-form-final">
+                    <input type="text" class="form-input" id="firstname-final" placeholder="Votre prénom" required>
+                    <input type="email" class="form-input" id="email-final" placeholder="Votre email professionnel" required>
+                    <input type="tel" class="form-input" id="phone-final" placeholder="Votre téléphone (06...)" required>
+                    <button type="submit" class="form-button">Voir la vidéo</button>
+                </form>
+                <p class="form-privacy">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" /></svg>
+                    100% gratuit · Sans spam · Accès immédiat
+                </p>
+            </div>
+            <div class="form-success" id="success-final">
+                <h4>✅ Vidéo débloquée !</h4>
+                <p>Vérifiez votre boîte mail (et vos spams).</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-logo">
+                <img src="CN_LOGO.png" alt="ConvertNative">
+                <span>ConvertNative</span>
+            </div>
+            <p class="footer-text">L'écosystème mobile-first pour les marques e-commerce ambitieuses.</p>
+            <div class="footer-links">
+                <a href="https://convertnative.com">Site web</a>
+                <!-- <a href="https://convertnative.com/cas-clients">Cas clients</a> -->
+                <a href="/cdn-cgi/l/email-protection#e5868a8b91848691a5868a8b938097918b84918c9380cb868a88">Contact</a>
+            </div>
+            <div class="footer-legal">
+                <a href="mentions-legales.html">Mentions légales</a>
+                <span>·</span>
+                <a href="cgv.html">CGV</a>
+            </div>
+            <p class="footer-copyright">© 2025 ConvertNative. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // Fonction pour envoyer à Brevo
+        async function subscribeToBrevo(email, firstName, phone, source = 'convertnative') {
+            try {
+                const response = await fetch('/api/subscribe', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email, firstName, phone, source })
+                });
+                const data = await response.json();
+                console.log('Brevo:', data);
+                return data.success || response.ok;
+            } catch (error) {
+                console.error('Brevo error:', error);
+                return false;
+            }
+        }
+
+        document.getElementById('email-form-hero').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const btn = this.querySelector('button');
+            const originalText = btn.textContent;
+            btn.textContent = 'Chargement...';
+            btn.disabled = true;
+
+            const firstName = document.getElementById('firstname-hero').value;
+            const email = document.getElementById('email-hero').value;
+            const phone = document.getElementById('phone-hero').value;
+            localStorage.setItem('userEmail', email);
+            localStorage.setItem('userFirstname', firstName);
+            
+            await subscribeToBrevo(email, firstName, phone, 'convertnative');
+            window.location.href = 'maquettes-figma.html';
+        });
+
+        document.getElementById('email-form-final').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const btn = this.querySelector('button');
+            const originalText = btn.textContent;
+            btn.textContent = 'Chargement...';
+            btn.disabled = true;
+
+            const firstName = document.getElementById('firstname-final').value;
+            const email = document.getElementById('email-final').value;
+            const phone = document.getElementById('phone-final').value;
+            localStorage.setItem('userEmail', email);
+            localStorage.setItem('userFirstname', firstName);
+            
+            await subscribeToBrevo(email, firstName, phone, 'convertnative');
+            window.location.href = 'maquettes-figma.html';
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+  
