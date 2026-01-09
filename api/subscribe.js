@@ -1,8 +1,4 @@
-// api/subscribe.js - Vercel Serverless Function
-// Inscription Brevo pour ConvertNative (listId: 5)
-
 export default async function handler(req, res) {
-  // CORS headers
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
@@ -21,9 +17,6 @@ export default async function handler(req, res) {
     return res.status(400).json({ error: 'Email requis' });
   }
 
-  // Liste ConvertNative = 5
-  const listId = 5;
-
   try {
     const response = await fetch('https://api.brevo.com/v3/contacts', {
       method: 'POST',
@@ -39,7 +32,7 @@ export default async function handler(req, res) {
           SMS: phone || '',
           SOURCE: source || 'convertnative-landing'
         },
-        listIds: [listId],
+        listIds: [5],
         updateEnabled: true
       })
     });
@@ -48,7 +41,7 @@ export default async function handler(req, res) {
 
     if (!response.ok) {
       if (data.code === 'duplicate_parameter') {
-        return res.status(200).json({ success: true, message: 'Contact déjà existant' });
+        return res.status(200).json({ success: true, message: 'Contact existant' });
       }
       console.error('Brevo error:', data);
       return res.status(response.status).json({ error: data.message || 'Erreur Brevo' });
